@@ -1,26 +1,82 @@
 @import "tailwindcss";
 
+@theme {
+  --color-terracotta-50: #fdf5f3;
+  --color-terracotta-100: #fbeae6;
+  --color-terracotta-200: #f6d1c9;
+  --color-terracotta-500: #c96f53;
+  --color-terracotta-600: #b05c43;
+  --color-terracotta-700: #934c36;
+  
+  --color-moss-50: #f7f8f6;
+  --color-moss-100: #eef1ec;
+  --color-moss-200: #dae1d7;
+  --color-moss-500: #6b7c66;
+  --color-moss-600: #576553;
+  --color-moss-700: #444f41;
+  
+  --color-sand-50: #faf9f6;
+  --color-sand-100: #f5f2eb;
+  --color-sand-200: #ebdccf;
+  --color-sand-300: #decbae;
+  --color-sand-800: #433e37;
+  --color-sand-900: #2d2a25;
+  
+  --font-serif: var(--font-serif), Georgia, serif;
+  --font-sans: var(--font-sans), system-ui, sans-serif;
+}
+
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  --background: #faf9f6; /* Warm sand-50 */
+  --foreground: #2d2a25; /* sand-900 */
 }
 
 body {
-  background: var(--background);
+  background-color: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-sans), system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
 }
+
+/* Custom Micro-Animations */
+@utility animate-fade-in {
+  animation: fadeIn 1.2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@utility animate-fade-in-up {
+  animation: fadeInUp 1s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@utility animation-delay-100 {
+  animation-delay: 100ms;
+}
+
+@utility animation-delay-200 {
+  animation-delay: 200ms;
+}
+
+@utility animation-delay-300 {
+  animation-delay: 300ms;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
