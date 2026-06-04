@@ -1,5 +1,5 @@
 /**
- * Neo-Brutalist Portfolio - Interaction Logic
+   Search Traffic & Local SEO Portfolio - Interaction Logic
  */
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -35,16 +35,18 @@ document.addEventListener('DOMContentLoaded', () => {
 
                 setTimeout(() => {
                     preloader.style.display = 'none';
+                    // Trigger KPI Counters after intro finishes
+                    animateKPIs();
                 }, 1000);
             }, 600); // Wait for logo to fade out
-        }, 1500); // Hold time for reading the logo in the center
+        }, 1200); // Hold time for reading the logo
     }, 100);
 
 
     // --- 2. IntersectionObserver (Scroll Reveals) ---
     const revealElements = document.querySelectorAll('.reveal');
     const revealOptions = {
-        threshold: 0.15,
+        threshold: 0.1,
         rootMargin: "0px"
     };
 
@@ -87,32 +89,27 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
 
-    // --- 4. Subtle Parallax on Case Study Titles ---
-    const parallaxTitles = document.querySelectorAll('.parallax-title');
-    let isTicking = false;
-    
-    window.addEventListener('scroll', () => {
-        // Run only on larger screens to preserve mobile performance
-        if (window.innerWidth > 768) {
-            if (!isTicking) {
-                window.requestAnimationFrame(() => {
-                    parallaxTitles.forEach(title => {
-                        const speed = 0.08;
-                        // Calculate position relative to viewport
-                        const rect = title.getBoundingClientRect();
-                        const yPos = (window.innerHeight - rect.top) * speed;
-                        
-                        // Clamp the transform to keep it subtle
-                        if (rect.top < window.innerHeight && rect.bottom > 0) {
-                            title.style.transform = `translateY(${-yPos}px)`;
-                        }
-                    });
-                    isTicking = false;
-                });
-                isTicking = true;
-            }
-        }
-    }, { passive: true }); // passive flag optimizes scroll performance
+    // --- 4. Dynamic KPI Counters ---
+    function animateKPIs() {
+        const kpiNumbers = document.querySelectorAll('.kpi-number');
+        
+        kpiNumbers.forEach(kpi => {
+            const target = parseInt(kpi.getAttribute('data-target'), 10);
+            let current = 0;
+            const duration = 1500; // 1.5 seconds animation
+            const stepTime = Math.max(Math.floor(duration / target), 15);
+            
+            const timer = setInterval(() => {
+                current += Math.ceil(target / (duration / stepTime));
+                if (current >= target) {
+                    kpi.textContent = target;
+                    clearInterval(timer);
+                } else {
+                    kpi.textContent = current;
+                }
+            }, stepTime);
+        });
+    }
 
 
     // --- 5. Mobile Navigation Toggle ---
@@ -145,28 +142,25 @@ document.addEventListener('DOMContentLoaded', () => {
     // --- 6. Deep-Dive Modal Logic ---
     const caseStudiesData = [
         {
-            title: "AuraWealth: AI-Driven Portfolio",
-            hero: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1200&q=80",
-            challenge: "Retail investors lack access to predictive, institution-grade asset management models within a unified, intuitive interface.",
-            solution: "Architected a high-fidelity dark-mode dashboard that integrates the Gemini Pro API. The system processes real-time market sentiment to deliver personalized, actionable investment strategies.",
-            deliverables: ["Figma Interactive Prototypes", "API Integration Architecture", "User Journey Modeling"],
-            tech: ["Gemini Pro API", "Next.js Framework", "Supabase PostgreSQL"]
+            title: "Search Feed Arbitrage Spec",
+            challenge: "Identifying and capturing profitable click monetization spreads between programmatic traffic channels (Taboola, MGID) and search networks (System1, Tonic) while optimizing bid metrics to prevent budget decay.",
+            solution: "Designed and configured Voluum trackers to separate fake traffic, monitor CPC-to-RPC fluctuations in real-time, and set up dynamic Lander tests. Kept ad sets tuned to maximize positive net margins down to geo-placement coordinates.",
+            deliverables: ["Lander Split Testing", "Voluum Postback Configuration", "Taboola Media Buying Bids"],
+            tech: ["Voluum Tracker", "Taboola Ads Manager", "MGID Native Exchange", "System1 Feeds"]
         },
         {
-            title: "NexusFlow: B2B Enterprise ERP",
-            hero: "https://images.unsplash.com/photo-1618761714954-0b8cd0026356?auto=format&fit=crop&w=1200&q=80",
-            challenge: "A mid-sized logistics firm was losing hundreds of hours a week due to fragmented software and high-friction data entry workflows.",
-            solution: "Developed comprehensive user journey maps and an interactive Figma prototype for a centralized ERP system, reducing expected onboarding time by 40%.",
-            deliverables: ["Wireframing & UI/UX Design", "Process Optimization", "Go-To-Market Strategy"],
-            tech: ["Figma", "Notion (Doc Structuring)", "Vercel Deployment Plan"]
+            title: "Local SEO & GBP Map Pack Specs",
+            challenge: "A service business operating in highly competitive local niches was losing high-value inbound calls due to complete absence from the Google Map Pack and inconsistent online listing states.",
+            solution: "Performed complete Google Business Profile optimization. Established 30+ verified directory citations with 100% NAP profile compliance. Leveraged semantic local markup and custom FAQs targeting Google AI Overview placements.",
+            deliverables: ["Google Business Profile Optimization", "NAP Citation Synced across 30+ sites", "Geo-targeted FAQ Schema Coding"],
+            tech: ["BrightLocal Listing Auditor", "Whitespark Link Generator", "GBP Admin Panel", "FAQ Schema"]
         },
         {
-            title: "OmniMarket: Global Expansion",
-            hero: "https://images.unsplash.com/photo-1504868584819-f8e8b4b6d7e3?auto=format&fit=crop&w=1200&q=80",
-            challenge: "An e-commerce aggregator needed to determine the commercial viability of expanding into three new emerging markets simultaneously.",
-            solution: "Conducted rigorous competitive benchmarking and modeled financial viability scenarios. Built a scaffolding backend on Supabase to simulate multi-region data ingestion.",
-            deliverables: ["Financial Market Modeling", "Competitive Benchmarking", "Data Scaffolding"],
-            tech: ["Supabase", "Trello (Agile Management)", "Python Data Analysis"]
+            title: "Franchise Local SEO Structure Specs",
+            challenge: "A home services brand with multiple location pages faced severe ranking blocks because corporate brand controls disabled root domain edit scopes for individual branches.",
+            solution: "Architected a distinct local directory folder hierarchy (/location/city) paired with localized schemas. Mapped local GBP listings directly to specific landing page files to bypass central domain limitations.",
+            deliverables: ["Directory Folder Mapping", "Local Google Business Link Setup", "Local Landing Page Tuning"],
+            tech: ["Google Search Console", "Ahrefs Domain Auditor", "BrightLocal Citation Hub"]
         }
     ];
 
@@ -178,7 +172,6 @@ document.addEventListener('DOMContentLoaded', () => {
     
     // Elements to populate
     const modalTitle = document.querySelector('.modal__title');
-    const modalHeroImg = document.querySelector('.modal__hero-img');
     const modalChallenge = document.getElementById('modal-challenge');
     const modalSolution = document.getElementById('modal-solution');
     const modalDeliverables = document.getElementById('modal-deliverables');
@@ -188,7 +181,6 @@ document.addEventListener('DOMContentLoaded', () => {
         if(!caseStudiesData[index]) return;
         const data = caseStudiesData[index];
         modalTitle.textContent = data.title;
-        modalHeroImg.src = data.hero;
         modalChallenge.textContent = data.challenge;
         modalSolution.textContent = data.solution;
         
@@ -221,7 +213,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
-    // Open modal on any "Read Full Case Study" button click
+    // Open modal on any button click
     caseStudyBtns.forEach(btn => {
         btn.addEventListener('click', () => {
             const index = btn.getAttribute('data-index');
@@ -234,11 +226,9 @@ document.addEventListener('DOMContentLoaded', () => {
     if(modalCloseBtn) modalCloseBtn.addEventListener('click', closeModal);
     if(modalOverlay) modalOverlay.addEventListener('click', closeModal);
     
-    // Also close modal when clicking the CTA to navigate to contact section
     if(modalCtaBtn) {
         modalCtaBtn.addEventListener('click', () => {
             closeModal();
-            // Smooth scroll to #connect will happen automatically because of the href
         });
     }
 
@@ -248,6 +238,7 @@ document.addEventListener('DOMContentLoaded', () => {
             closeModal();
         }
     });
+
 
     // --- 7. Interactive Project Discovery Questionnaire ---
     const discoveryForm = document.getElementById('discovery-form');
@@ -280,6 +271,14 @@ document.addEventListener('DOMContentLoaded', () => {
                     step.classList.add('exit-left');
                 }
             });
+
+            // Scroll wrapper into view
+            const wrapper = discoveryForm.closest('.discovery-wrapper');
+            if (wrapper) {
+                setTimeout(() => {
+                    wrapper.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }, 80);
+            }
         }
 
         function validateStep() {
@@ -332,12 +331,10 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         });
         
-        // Final form submission handling
         discoveryForm.addEventListener('submit', (e) => {
             if (!validateStep()) {
                 e.preventDefault();
             }
-            // Let the Web3Forms submission proceed if valid.
         });
     }
 
