@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+
+# Sitemap declaration
+Sitemap: https://mojaddidshashwoto.page.gd/sitemap.xml
