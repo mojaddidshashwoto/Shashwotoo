@@ -100,6 +100,14 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
+    // 5.1 Bind Download Report listener
+    const downloadBtn = document.getElementById('download-report');
+    if (downloadBtn) {
+        downloadBtn.addEventListener('click', () => {
+            window.print();
+        });
+    }
+
     // 6. Bind Help Description toggles
     helpToggles.forEach(toggle => {
         toggle.addEventListener('click', (e) => {
