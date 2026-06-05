@@ -3,42 +3,42 @@
         xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <!-- English Main Page -->
   <url>
-    <loc>https://mojaddidshashwoto.page.gd/</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://mojaddidshashwoto.page.gd/"/>
-    <xhtml:link rel="alternate" hreflang="bn" href="https://mojaddidshashwoto.page.gd/bn/"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://mojaddidshashwoto.page.gd/"/>
-    <lastmod>2026-06-05</lastmod>
+    <loc>https://mojaddidshashwoto.me/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mojaddidshashwoto.me/"/>
+    <xhtml:link rel="alternate" hreflang="bn" href="https://mojaddidshashwoto.me/bn/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mojaddidshashwoto.me/"/>
+    <lastmod>2026-06-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   
   <!-- Bangla Main Page -->
   <url>
-    <loc>https://mojaddidshashwoto.page.gd/bn/</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://mojaddidshashwoto.page.gd/"/>
-    <xhtml:link rel="alternate" hreflang="bn" href="https://mojaddidshashwoto.page.gd/bn/"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://mojaddidshashwoto.page.gd/"/>
-    <lastmod>2026-06-05</lastmod>
+    <loc>https://mojaddidshashwoto.me/bn/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mojaddidshashwoto.me/"/>
+    <xhtml:link rel="alternate" hreflang="bn" href="https://mojaddidshashwoto.me/bn/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mojaddidshashwoto.me/"/>
+    <lastmod>2026-06-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
 
   <!-- Brand Subfolders -->
   <url>
-    <loc>https://mojaddidshashwoto.page.gd/mojaddid-shashwoto/</loc>
-    <lastmod>2026-06-05</lastmod>
+    <loc>https://mojaddidshashwoto.me/mojaddid-shashwoto/</loc>
+    <lastmod>2026-06-06</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://mojaddidshashwoto.page.gd/mojaddid/</loc>
-    <lastmod>2026-06-05</lastmod>
+    <loc>https://mojaddidshashwoto.me/mojaddid/</loc>
+    <lastmod>2026-06-06</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://mojaddidshashwoto.page.gd/shashwoto/</loc>
-    <lastmod>2026-06-05</lastmod>
+    <loc>https://mojaddidshashwoto.me/shashwoto/</loc>
+    <lastmod>2026-06-06</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>

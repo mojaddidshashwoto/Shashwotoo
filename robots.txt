@@ -2,4 +2,4 @@ User-agent: *
 Allow: /
 
 # Sitemap declaration
-Sitemap: https://mojaddidshashwoto.page.gd/sitemap.xml
+Sitemap: https://mojaddidshashwoto.me/sitemap.xml
