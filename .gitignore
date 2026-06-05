@@ -1,0 +1,5 @@
+# Ignore local netlify state
+.netlify/
+
+# Ignore nested git subfolder
+Shashwotoo/
